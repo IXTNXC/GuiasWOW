@@ -1,0 +1,271 @@
+/* RESET Y BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: linear-gradient(160deg, #0f172a 0%, #020617 100%);
+  color: #e5e7eb;
+  padding: 20px;
+}
+
+/* HEADER */
+.hero {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.hero h1 {
+  font-size: 36px;
+  color: #60a5fa;
+  text-shadow: 0 0 10px #2563eb, 0 0 20px #3b82f6;
+}
+.hero p {
+  font-size: 16px;
+  color: #cbd5f5;
+  text-shadow: 0 0 5px #93c5fd;
+  margin-top: 5px;
+}
+
+/* ACORDEÓN PRINCIPAL */
+.accordion {
+  width: 100%;
+  padding: 16px 20px;
+  margin: 12px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #e0f2fe;
+  background: linear-gradient(135deg, #111827, #1e293b);
+  border: 1px solid #2563eb;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+}
+.accordion:hover {
+  background: linear-gradient(135deg, #1e293b, #111827);
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.8);
+}
+
+/* PANEL PRINCIPAL */
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  background: rgba(15, 23, 42, 0.95);
+  border-left: 3px solid #2563eb;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 0 16px;
+}
+.panel.open {
+  padding: 15px 16px;
+  max-height: 2000px; /* ajustable según contenido */
+}
+
+/* CONTENEDOR DE BOTONES DE CLASES */
+.clases-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 15px;
+  justify-content: center;
+}
+
+/* BOTONES DE CLASE UNIFORMES */
+.clase {
+  flex: 0 1 120px; /* ancho fijo para todos */
+  height: 50px; /* altura uniforme */
+  padding: 10px;
+  border-radius: 12px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+  color: #fff;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+.clase:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(96, 165, 250, 0.6);
+}
+
+/* COLORES OFICIALES DE WOW */
+.guerrero { background: #C79C6E; color: #000; }
+.paladin  { background: #F58CBA; color: #000; }
+.cazador  { background: #ABD473; color: #000; }
+.picaro   { background: #FFF569; color: #000; }
+.sacerdote{ background: #FFFFFF; color: #000; }
+.dk       { background: #C41F3B; color: #fff; }
+.chaman   { background: #0070DE; color: #fff; }
+.mago     { background: #69CCF0; color: #000; }
+.brujo    { background: #9482C9; color: #fff; }
+.druida   { background: #FF7D0A; color: #fff; }
+
+/* SUB-ACORDEÓN: ESPECIALIZACIONES */
+.spec-panel {
+  margin-top: 10px;
+}
+.spec-list {
+  display: none; /* Oculto por defecto */
+  margin-top: 10px;
+}
+.spec-list ul {
+  list-style: none;
+  padding-left: 0;
+}
+.spec-list li {
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #1e293b, #111827);
+  border: 1px solid #334155;
+  border-radius: 10px;
+  margin: 6px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(96, 165, 250, 0.3);
+}
+.spec-list li:hover {
+  transform: scale(1.03);
+  background: linear-gradient(135deg, #334155, #1e293b);
+  box-shadow: 0 0 15px rgba(96, 165, 250, 0.6);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 12px;
+  color: #94a3b8;
+  text-shadow: 0 0 5px #2563eb;
+}
+
+/* RESPONSIVE */
+@media (max-width: 500px) {
+  .clase {
+    flex: 0 1 45%; /* botones más pequeños en móvil */
+    height: 45px;
+    font-size: 14px;
+  }
+}
+
+.spec-list a.spec-link {
+  display: block;
+  text-decoration: none;
+  color: #cbd5e1;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #1e293b, #111827);
+  border: 1px solid #334155;
+  border-radius: 10px;
+  margin: 6px 0;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.spec-list a.spec-link:hover {
+  transform: scale(1.03);
+  background: linear-gradient(135deg, #334155, #1e293b);
+  box-shadow: 0 0 15px rgba(96,165,250,0.6);
+}
+
+/* Contenedor universal para todas las imágenes de clase */
+.class-hero {
+  position: relative;
+  text-align: center;
+  margin: 30px auto;
+  max-width: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(150, 200, 255, 0.4), 0 0 40px rgba(100, 150, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.class-hero:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(150, 200, 255, 0.6), 0 0 50px rgba(100, 150, 255, 0.3);
+}
+
+/* Imagen de clase */
+.class-hero .class-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  border-radius: 20px;
+}
+
+.class-hero .class-img:hover {
+  transform: scale(1.06);
+  filter: brightness(1.1) saturate(1.2);
+}
+
+/* Banner neutro para título */
+.class-hero .class-title {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 12px 0;
+  background: rgba(0,0,0,0.5); /* fondo semitransparente neutro */
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 0 6px #000, 0 0 12px #000;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+/* Subtítulo neutro */
+.class-hero .class-subtitle {
+  position: absolute;
+  top: 50px; /* debajo del título principal */
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: #e0f2fe;
+  font-weight: 500;
+  text-shadow: 0 0 4px #000, 0 0 8px #000;
+}
+
+/* Banner animado al hover (opcional futurista) */
+.class-hero:hover .class-title,
+.class-hero:hover .class-subtitle {
+  text-shadow: 0 0 12px #fff, 0 0 20px #a0c4ff, 0 0 30px #60a5fa;
+}
+/* Ventanas/Secciones de guía */
+.guide-section {
+  background: rgba(20, 25, 40, 0.85); /* fondo oscuro semitransparente */
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 700px;
+  box-shadow: 0 0 20px rgba(100, 150, 255, 0.3), 0 0 40px rgba(80, 130, 250, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.guide-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(100, 150, 255, 0.5), 0 0 50px rgba(80, 130, 250, 0.3);
+}
+
+/* Listas dentro de la guía */
+.guide-section ul, .guide-section ol {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+/* Encabezados de secciones */
+.guide-section h4 {
+  margin-bottom: 12px;
+  color: #60a5fa;
+  text-shadow: 0 0 5px #2563eb;
+}
